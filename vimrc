@@ -14,7 +14,6 @@ if filereadable($HOME.'/.vim/autoload/plug.vim')
   Plug 'morhetz/gruvbox'
 
   " Syntax
-  Plug 'taketwo/vim-ros'
   Plug 'plasticboy/vim-markdown'
   Plug 'sudar/vim-arduino-syntax'
   Plug 'vim-syntastic/syntastic'

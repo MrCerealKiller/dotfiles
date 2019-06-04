@@ -89,6 +89,9 @@ rosworkon () {
 
     export ROS_PACKAGE_PATH=/opt/ros/melodic/share
     export ROS_WORKSPACE="${1}/catkin_ws"
+  else
+    echo "Usage: rosworkon <path/to/ws>"
+  fi
 }
 
 ethros () {

@@ -17,7 +17,6 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'ssh' \
   'command-not-found' \
-  'python' \
   'tmux' \
   'fasd' \
   'archive' \
