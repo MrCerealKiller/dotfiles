@@ -14,7 +14,7 @@
 * Set Global Configs:
     1. `git config --global user.name "uname"`
     2. `git config --global user.email "email"`
-    3. `git config --global push.default simple
+    3. `git config --global push.default simple`
 
 **Zsh Install**
 1. `sudo apt-get install zsh`
@@ -43,6 +43,7 @@
 * tree
 * tlp
 * tlp-rdw
+* shutter
 
 **Usual Python Installs:**
 * ipython
