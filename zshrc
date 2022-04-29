@@ -104,20 +104,8 @@ wlanros () {
   export ROS_IP=$IP
 }
 
+###################
+## AUTO-APPENDED ##
+###################
 
-#####################
-## MCGILL ROBOTICS ##
-#####################
-
-export ROBOT=auv
-export IAMROBOT=false
-export ROBOTIC_PATH=/home/jeremy
-if [[ -f ${ROBOTIC_PATH}/compsys/roboticrc ]]; then
-  source ${ROBOTIC_PATH}/compsys/roboticrc
-fi
-
-auv() {
-  # wlanros
-  auv_ros_master
-  source ${ROBOTIC_PATH}/auv/catkin_ws/devel/setup.zsh
-}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
