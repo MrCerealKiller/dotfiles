@@ -6,6 +6,7 @@ ln -sfv "$(pwd)/zshrc" "${HOME}/.zshrc"
 ln -sfv "$(pwd)/zpreztorc" "${HOME}/.zpreztorc"
 ln -sfv "$(pwd)/vimrc" "${HOME}/.vimrc"
 ln -sfv "$(pwd)/tmux.conf" "${HOME}/.tmux.conf"
+ln -sfv "$(pwd)/roscompat-aliases.zsh" "${HOME}/.roscompat-aliases.zsh"
 
 # Vim Plugins
 if [[ ! -f "${HOME}/.vim/autoload/plug.vim" ]]; then
