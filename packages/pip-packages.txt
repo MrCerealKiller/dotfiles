@@ -1,0 +1,4 @@
+ipython
+pysensors
+yapf
+futures

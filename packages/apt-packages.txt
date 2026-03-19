@@ -1,0 +1,11 @@
+wget          #
+curl          #
+tmuxinator    # create and manage tmux sessions with templates
+wine-stable   # emulate windows programs (if possible...)
+htop          # system and process monitor, nicer than top
+lm-sensors    # internal sensor monitoring utilities
+tree          # hierarchichal file view
+tlp           # laptop power manager
+tlp-rdw       # laptop power manager
+tio           # serial emulator
+termdown      # terminal stopwatch

@@ -6,13 +6,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-##################
-## GEN. EXPORTS ##
-##################
+#################
+## Environment ##
+#################
 
-#export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export TERM=xterm-256color        # Default Terminal Emulator
-export EDITOR=vim                 # Default Text Editor
+export TERMINAL=gnome-terminal    # Default terminal emulator
+export EDITOR=/usr/bin/vim        # Default text editor
+export ROS_DISTRO=jazzy           # Current ros distro being used
 fpath=("/usr/local/bin/" $fpath)  # Add homebrew to path
 
 #############
@@ -44,43 +44,45 @@ unsetopt CORRECT_ALL    # Kind of annoying honestly...
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 
-###################
-## OTHER SOURCES ##
-###################
-
-if [[ -s "/opt/ros/humble/setup.zsh" ]]; then
-  source "/opt/ros/humble/setup.zsh"
-fi
-
-if [[ -s "${HOME}/.roscompat-aliases.zsh" ]]; then
-  source "${HOME}/.roscompat-aliases.zsh"
-fi
-
-function load-esp-idf
-{
-  if [[ -s "${HOME}/tools/esp-idf/export.sh" ]]; then
-    source "${HOME}/tools/esp-idf/export.sh"
-  fi
-}
-
 #############
 ## ALIASES ##
 #############
 
-alias op="xdg-open"
-alias touchall="find . -type f -exec touch {} +"
-alias degreen="chmod -R a-x,o-w,+X "
-alias ssh-forget="ssh-keygen -f \"${HOME}/.ssh/known_hosts\" -R "
+if [[ -d "${HOME}"/.zaliases ]]; then
+  for file in "${HOME}"/.zaliases/*; do
+    [[ -f "${file}" ]] || continue
+    source "${file}"
+  done
+fi
 
 ###############
 ## FUNCTIONS ##
 ###############
 
-# Removed due to obsolescence. Should update
+if [[ -d "${HOME}"/.zcripts ]]; then
+  for file in "${HOME}"/.zcripts/*; do
+    [[ -f "${file}" ]] || continue
+    source "${file}"
+  done
+fi
+
+###################
+## OTHER SOURCES ##
+###################
+
+if [[ -s "/opt/ros/${ROS_DISTRO}/setup.zsh" ]]; then
+  source "/opt/ros/${ROS_DISTRO}/setup.zsh"
+fi
 
 ###################
 ## AUTO-APPENDED ##
 ###################
+#
+# Everything past this point is auto-appended by other
+# programs during installations and configuration
+#
+# Please be careful not to clutter and bloat the
+# repository version!
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
