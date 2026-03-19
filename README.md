@@ -13,8 +13,13 @@ unify setups across machines and speed up deployment of new machines. The
 directory to be linked with the core rc file
 * **config**: All configuration files for various tools and programs, to be
 symlinked to their appropriate destinations
+* **functions**: Contains shell function scripts that will get linked to the
+home directory to be linked with the core rc file
+* **meta**: Contains meta information for the script itself
 * **packages**: Package lists for global installation, separated by package
 manager (e.x. `apt`, `pip`, etc.)
+* **ros**: Contains ROS installation script and (eventually) a similar
+typical-package installation file
 * **`setup.sh`**: Script to automatically set up basic configurations
 
 ## Prerequisites
@@ -43,10 +48,25 @@ however, a few things should be done ahead of running the setup script.
 3. Mailspring
 4. Signal
 5. Gimp
-6. VLC
-7. OBS
-8. Postman
+6. Inkscpape
+7. Shotcut
+8. VLC
+9. OBS
+10. Postman
 
 ## TODOs
-* Create separate ROS setup script
+* Finish error handling in main script
+* Port and link some previous tooling
 * Integrate python environment setup and installation into core setup
+
+## Disclaimer
+This repository is public and free to use at your own risk.
+There are some baked in assumptions based on my typical setups, hardware,
+and workflows.
+
+_Do you trust me??_
+No need to trust me, just look through the scipts and see what they do.
+Maybe fork it and star instead?
+
+I am not responsible for damages, data loss, or miconfigurations that
+may arise from the use of this repository.

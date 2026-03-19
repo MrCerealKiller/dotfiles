@@ -1,5 +1,6 @@
-wget          #
-curl          #
+software-properties-common
+wget
+curl
 tmuxinator    # create and manage tmux sessions with templates
 wine-stable   # emulate windows programs (if possible...)
 htop          # system and process monitor, nicer than top
