@@ -54,6 +54,9 @@ however, a few things should be done ahead of running the setup script.
 9. OBS
 10. Postman
 
+## Other helpful bits
+* Force Linux to store local time instead of UTC in the bios clock (an unfortunate compromise for dual-booting...): `sudo timedatectl set-local-rtc 1`
+
 ## TODOs
 * Finish error handling in main script
 * Port and link some previous tooling

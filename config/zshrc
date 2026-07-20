@@ -14,6 +14,7 @@ export TERMINAL=gnome-terminal    # Default terminal emulator
 export EDITOR=/usr/bin/vim        # Default text editor
 export ROS_DISTRO=jazzy           # Current ros distro being used
 fpath=("/usr/local/bin/" $fpath)  # Add homebrew to path
+export IMPAC_WORKSPACE="/home/jmall/projects/impac/impac-super"
 
 #############
 ## HISTORY ##
@@ -66,13 +67,24 @@ if [[ -d "${HOME}"/.zcripts ]]; then
   done
 fi
 
+#############
+## SECRETS ##
+#############
+
+# Please note that zecrets should not be backed up publically...
+if [[ -s "${HOME}"/.zecrets ]]; then
+  source "${HOME}"/.zecrets
+fi
+
 ###################
 ## OTHER SOURCES ##
 ###################
 
-if [[ -s "/opt/ros/${ROS_DISTRO}/setup.zsh" ]]; then
-  source "/opt/ros/${ROS_DISTRO}/setup.zsh"
-fi
+ros() {
+  if [[ -s "/opt/ros/${ROS_DISTRO}/setup.zsh" ]]; then
+    source "/opt/ros/${ROS_DISTRO}/setup.zsh"
+  fi
+}
 
 ###################
 ## AUTO-APPENDED ##
@@ -86,3 +98,13 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+. "$HOME/.local/bin/env"
+
+# pnpm
+export PNPM_HOME="/home/jmall/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

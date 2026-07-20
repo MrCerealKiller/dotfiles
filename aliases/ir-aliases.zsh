@@ -1,0 +1,1 @@
+alias impac-chrome='google-chrome   --user-data-dir=/tmp/impac-webgl-fallback   --use-gl=angle   --use-angle=swiftshader-webgl   --enable-unsafe-swiftshader   --ignore-gpu-blocklist   http://localhost'
